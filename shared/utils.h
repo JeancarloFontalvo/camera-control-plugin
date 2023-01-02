@@ -13,3 +13,5 @@ std::string toString(std::vector<T>& vector);
 
 void runSafe(std::function<void()> action);
 void runSafe(std::function<void()> action, std::function<void(std::string)> logger);
+
+std::string commandNameResolver(std::string name);
