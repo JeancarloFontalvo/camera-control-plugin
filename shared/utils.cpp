@@ -1,6 +1,9 @@
 #include "pch.h"
-#include "Utils.h"
+
 #include <sstream>
+
+#include "utils.h"
+#include "constants.h"
 
 std::string atWithDefault(std::vector<std::string>& vector, int position, const std::string defaultValue)
 {
@@ -18,9 +21,11 @@ std::string toString(Vector& vector)
 {
 	std::stringstream str;
 
-	str << vector.X;
-	str << vector.Y;
-	str << vector.Z;
+	str << "(" 
+		<< "x: " << vector.X << ", "
+		<< "y: " << vector.Y << ", "
+		<< "z: " << vector.Z
+		<< ")";
 
 	return str.str();
 }
@@ -47,6 +52,11 @@ void runSafe(std::function<void()> action, std::function<void(std::string)> logg
 	{
 		logger(e.what());
 	}
+}
+
+std::string commandNameResolver(std::string name)
+{
+	return constants::PLUGIN_COMMAND_PREFIX + name;
 }
 
 template <typename T>
