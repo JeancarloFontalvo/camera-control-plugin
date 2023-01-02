@@ -120,6 +120,12 @@
     <ClInclude Include="shared\models\SensitivityModel.h">
       <Filter>Header Files\shared\models</Filter>
     </ClInclude>
+    <ClInclude Include="core\boostrap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\models\MoveParamsModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -178,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="services\CommandParamParsers.cpp">
       <Filter>Source Files\services</Filter>
+    </ClCompile>
+    <ClCompile Include="core\boostrap.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
