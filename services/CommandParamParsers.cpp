@@ -5,7 +5,7 @@ CmdParamFactory* CmdParamFactory::instance = NULL;
 
 CmdParamFactory::CmdParamFactory()
 {
-    this->factories = std::map<std::string, std::function<BaseModel(std::vector<std::string>)>>();
+    this->factories = std::map<std::string, Creator>();
 }
 
 CmdParamFactory::~CmdParamFactory()

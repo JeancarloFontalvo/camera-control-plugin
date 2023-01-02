@@ -19,4 +19,12 @@ namespace constants {
 	// commands
 	const std::string CMD_MOVE = "move";
 	const std::string CMD_GET_INFO = "info";
+
+	namespace CmdVariables {
+		const std::string VAR_X = "x";
+		const std::string VAR_Y = "y";
+		const std::string VAR_Z = "z";
+		const std::string VAR_ROLL = "roll";
+		const std::string VAR_PITCH = "pitch";
+	}
 }

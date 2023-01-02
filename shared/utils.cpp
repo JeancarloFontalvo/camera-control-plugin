@@ -30,6 +30,7 @@ std::string toString(Vector& vector)
 	return str.str();
 }
 
+
 void runSafe(std::function<void()> action)
 {
 	try

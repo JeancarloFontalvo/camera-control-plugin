@@ -5,23 +5,24 @@
 class CmdParamFactory {
 
 private:
+	typedef std::function<BaseModel*(std::vector<std::string>)> Creator;
 	static CmdParamFactory* instance;
 	CmdParamFactory();
 	~CmdParamFactory();
-	std::map<std::string, std::function<BaseModel(std::vector<std::string>)>> factories;
+	std::map<std::string, Creator> factories;
 public:
 
 	static CmdParamFactory* getInstance();
 
 	// instance methods
-	void registerProvider(std::string name, std::function<BaseModel(std::vector<std::string>)> provider);
+	void registerProvider(std::string name, Creator provider);
 
 	template <ModelConcept<BaseModel> T>
-	T get(std::string name, std::vector<std::string> params);
+	BaseModel* get(std::string name, std::vector<std::string> params);
 
 };
 
-inline void CmdParamFactory::registerProvider(std::string name, std::function<BaseModel(std::vector<std::string>)> provider)
+inline void CmdParamFactory::registerProvider(std::string name, Creator provider)
 {
 	if (this->factories.find(name) != this->factories.end()) {
 		return;
@@ -31,12 +32,12 @@ inline void CmdParamFactory::registerProvider(std::string name, std::function<Ba
 }
 
 template <ModelConcept<BaseModel> T>
-inline T CmdParamFactory::get(std::string name, std::vector<std::string> params)
+inline BaseModel* CmdParamFactory::get(std::string name, std::vector<std::string> params)
 {
 	if (this->factories.find(name) == this->factories.end()) {
 
-		throw std::exception(std::format("unsupported or not provider found for {}", name));
+		throw std::exception(std::format("unsupported or not provider found for {}", name).data());
 	}
 
-	return (T) this->factories[name](params);
+	return this->factories[name](params);
 }
