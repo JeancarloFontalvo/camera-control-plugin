@@ -13,11 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\shared">
+      <UniqueIdentifier>{15ac636b-1b23-4ad9-9910-93b122996d1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\services">
+      <UniqueIdentifier>{6d074c8b-7084-4d38-a383-8be3e03a4a88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\services">
+      <UniqueIdentifier>{7f6aee08-b26a-41d5-b90c-17e642cff9bc}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\core">
-      <UniqueIdentifier>{3b35b16a-6253-4857-837b-869ecff14c15}</UniqueIdentifier>
+      <UniqueIdentifier>{b3f16ce2-132e-4553-a065-1896622c8d85}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\core">
-      <UniqueIdentifier>{d5d62ebc-f5d8-4a67-aeb5-9bf5eec332ee}</UniqueIdentifier>
+      <UniqueIdentifier>{d678bd73-6ea0-49b8-9099-3bf223ec9ff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared">
+      <UniqueIdentifier>{060d1795-799c-4ae1-a8bd-6e54c29e3244}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgui">
+      <UniqueIdentifier>{951a3942-ead8-425c-a213-b9d0a1ae4bcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\imgui">
+      <UniqueIdentifier>{79a38e54-f3ca-4037-9a4d-9131696e4fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shared\models">
+      <UniqueIdentifier>{a773b9ae-1e42-42f4-870b-353e263f54ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\models">
+      <UniqueIdentifier>{21d451af-e8ea-403d-81ca-f16d2556f983}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,17 +51,80 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CameraControl.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="shared\constants.h">
+      <Filter>Header Files\shared</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="services\StateManager.h">
+      <Filter>Header Files\services</Filter>
     </ClInclude>
-    <ClInclude Include="models.h">
+    <ClInclude Include="core\CameraControl.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="constants.h">
+    <ClInclude Include="shared\utils.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_additions.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_rangeslider.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_searchablecombo.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_stdlib.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_timeline.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imguivariouscontrols.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="core\GuiBase.h">
       <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\logging.h">
+      <Filter>Header Files\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="services\CommandParamParsers.h">
+      <Filter>Header Files\services</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\models\base.h">
+      <Filter>Header Files\shared\models</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\models\SensitivityModel.h">
+      <Filter>Header Files\shared\models</Filter>
+    </ClInclude>
+    <ClInclude Include="core\boostrap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\models\MoveParamsModel.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -47,10 +134,58 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CameraControl.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="services\StateManager.cpp">
+      <Filter>Source Files\services</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="core\CameraControl.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\utils.cpp">
+      <Filter>Source Files\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_additions.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_rangeslider.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_searchablecombo.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_stdlib.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_timeline.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imguivariouscontrols.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="core\GuiBase.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="services\CommandParamParsers.cpp">
+      <Filter>Source Files\services</Filter>
+    </ClCompile>
+    <ClCompile Include="core\boostrap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

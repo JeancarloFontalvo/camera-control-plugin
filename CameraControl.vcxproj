@@ -124,7 +124,8 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\jeanc\AppData\Roaming\bakkesmod\bakkesmod\bakkesmodsdk\include;%(AdditionalIncludeDirectories); %(AdditionalIncludeDirectories)\core</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jeanc\AppData\Roaming\bakkesmod\bakkesmod\bakkesmodsdk\include;%(AdditionalIncludeDirectories);$(ProjectDir);$(ProjectDir)\shared\</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,7 +147,8 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\jeanc\AppData\Roaming\bakkesmod\bakkesmod\bakkesmodsdk\include;%(AdditionalIncludeDirectories); %(AdditionalIncludeDirectories)\core</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jeanc\AppData\Roaming\bakkesmod\bakkesmod\bakkesmodsdk\include;%(AdditionalIncludeDirectories);$(ProjectDir);$(ProjectDir)\shared\</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -161,23 +163,60 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CameraControl.h" />
-    <ClInclude Include="constants.h" />
+    <ClInclude Include="core\boostrap.h" />
+    <ClInclude Include="services\CommandParamParsers.h" />
+    <ClInclude Include="core\CameraControl.h" />
+    <ClInclude Include="core\GuiBase.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imguivariouscontrols.h" />
+    <ClInclude Include="imgui\imgui_additions.h" />
+    <ClInclude Include="imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="imgui\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imgui_rangeslider.h" />
+    <ClInclude Include="imgui\imgui_searchablecombo.h" />
+    <ClInclude Include="imgui\imgui_stdlib.h" />
+    <ClInclude Include="imgui\imgui_timeline.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="shared\logging.h" />
+    <ClInclude Include="shared\models\MoveParamsModel.h" />
+    <ClInclude Include="shared\models\SensitivityModel.h" />
+    <ClInclude Include="shared\constants.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="models.h" />
+    <ClInclude Include="shared\models\base.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="services\StateManager.h" />
+    <ClInclude Include="shared\utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CameraControl.cpp" />
+    <ClCompile Include="core\boostrap.cpp" />
+    <ClCompile Include="services\CommandParamParsers.cpp" />
+    <ClCompile Include="core\CameraControl.cpp" />
+    <ClCompile Include="core\GuiBase.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imguivariouscontrols.cpp" />
+    <ClCompile Include="imgui\imgui_additions.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui_rangeslider.cpp" />
+    <ClCompile Include="imgui\imgui_searchablecombo.cpp" />
+    <ClCompile Include="imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="imgui\imgui_timeline.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="services\StateManager.cpp" />
+    <ClCompile Include="shared\utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
